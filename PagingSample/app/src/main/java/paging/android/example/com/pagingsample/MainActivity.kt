@@ -17,6 +17,7 @@
 package paging.android.example.com.pagingsample
 
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import androidx.activity.viewModels
@@ -34,10 +35,12 @@ import kotlinx.android.synthetic.main.activity_main.*
  */
 class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<CheeseViewModel>()
+    private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.d(TAG,"onCreate!! ")
 
         // Create adapter for the RecyclerView
         val adapter = CheeseAdapter()
